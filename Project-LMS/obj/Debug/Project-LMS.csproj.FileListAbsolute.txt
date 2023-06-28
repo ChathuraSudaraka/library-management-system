@@ -1,0 +1,15 @@
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\bin\Debug\Project-LMS.exe.config
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\bin\Debug\Project-LMS.exe
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\bin\Debug\Project-LMS.pdb
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\bin\Debug\MaterialSkin.dll
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project-LMS.csproj.AssemblyReference.cache
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project-LMS.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project_LMS.Properties.Resources.resources
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project-LMS.csproj.GenerateResource.cache
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project-LMS.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project-LMS.csproj.CopyComplete
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project-LMS.exe
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project-LMS.pdb
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project_LMS.admin.resources
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project_LMS.student.resources
+C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\obj\Debug\Project_LMS.lecturer.resources
