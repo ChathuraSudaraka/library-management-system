@@ -86,7 +86,7 @@
             this.materialTextBox1.Size = new System.Drawing.Size(518, 50);
             this.materialTextBox1.TabIndex = 17;
             this.materialTextBox1.Text = "";
-            this.materialTextBox1.TextChanged += new System.EventHandler(this.materialTextBox1_TextChanged);
+            this.materialTextBox1.TextChanged += new System.EventHandler(this.materialButton1_Click);
             // 
             // materialTextBox2
             // 
