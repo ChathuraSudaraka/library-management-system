@@ -29,3 +29,34 @@ C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\bin\Debug\S
 C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Lenovo ideapadGaming\Desktop\lbjhkl\Project-LMS\Project-LMS\bin\Debug\System.Threading.Tasks.Extensions.xml
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\Project-LMS.exe.config
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\Project-LMS.exe
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\Project-LMS.pdb
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\MaterialSkin.dll
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\MySqlConnector.dll
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Buffers.dll
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Memory.dll
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Numerics.Vectors.dll
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Threading.Tasks.Extensions.dll
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\MySqlConnector.xml
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Buffers.xml
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Memory.xml
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Numerics.Vectors.xml
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+F:\GitHub\library-management-system\Project-LMS\bin\Debug\System.Threading.Tasks.Extensions.xml
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.csproj.AssemblyReference.cache
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.csproj.SuggestedBindingRedirects.cache
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project_LMS.admin.resources
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project_LMS.lecturer.resources
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project_LMS.login.resources
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project_LMS.Properties.Resources.resources
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project_LMS.signup.resources
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project_LMS.student.resources
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.csproj.GenerateResource.cache
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.csproj.CoreCompileInputs.cache
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.csproj.CopyComplete
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.exe
+F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.pdb
