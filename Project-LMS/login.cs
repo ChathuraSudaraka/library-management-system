@@ -33,7 +33,7 @@ namespace Project_LMS
 
             try
             {
-                String connectionString = "server=localhost;database=library-management-system;uid=root;password=Well#ON123;";
+                String connectionString = "server=localhost;database=library-management-system;uid=root;password=Same2u;";
                 MySqlConnection connection = new MySqlConnection();
                 connection.ConnectionString = connectionString;
                 connection.Open();
