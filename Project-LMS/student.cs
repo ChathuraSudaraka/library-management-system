@@ -26,6 +26,11 @@ namespace Project_LMS
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Grey800, Primary.Blue900, Primary.LightBlue100, Accent.LightBlue200, TextShade.WHITE);
 
+            this.LoadBooks();
+        }
+
+        public void LoadBooks(String name = "")
+        {
             try
             {
                 string connectionString = "server=localhost;database=library-management-system;uid=root;password=Well#ON123;";
@@ -33,7 +38,7 @@ namespace Project_LMS
                 connection.ConnectionString = connectionString;
                 connection.Open();
 
-                String query = "SELECT books.id, isAvailable, titles.title AS title, authors.name AS author\r\nFROM books \r\nINNER JOIN authors ON books.authors_id = authors.id\r\nINNER JOIN titles ON books.titles_id = titles.id ";
+                String query = "SELECT books.id, isAvailable, titles.title AS title, authors.name AS author\r\nFROM books \r\nINNER JOIN authors ON books.authors_id = authors.id\r\nINNER JOIN titles ON books.titles_id = titles.id WHERE title LIKE '%"+ name +"%' ORDER BY title ASC";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -47,11 +52,11 @@ namespace Project_LMS
 
                 reader.Close();
                 connection.Close();
-            } catch (MySqlException ex)
+            }
+            catch (MySqlException ex)
             {
                 MessageBox.Show("Error" + ex.Message);
             }
-
         }
     }
 }

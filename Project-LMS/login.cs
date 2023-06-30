@@ -28,42 +28,45 @@ namespace Project_LMS
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            string name = materialTextBox1.Text;
-            string password = materialTextBox2.Text;
+            String name = materialTextBox1.Text;
+            String password = materialTextBox2.Text;
 
             try
             {
-                string connectionString = "server=localhost;database=library-management-system;uid=root;password=Same2u;";
+                String connectionString = "server=localhost;database=library-management-system;uid=root;password=Well#ON123;";
                 MySqlConnection connection = new MySqlConnection();
                 connection.ConnectionString = connectionString;
                 connection.Open();
 
-                String query = "SELECT * FROM users where name = 'name' and password = 'password'";
+                String query = "SELECT * FROM users \r\nWHERE `name` = '"+ name +"'\r\nAND `password` = '"+ password +"'";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    string role = reader["role"].ToString();
+                    // 1 = admin, 2 = lecuturer, 3 = student
+                    String role = reader["role_id"].ToString();
 
-                    if (role == "admin")
+                    if (role == "1")
                     {
                         admin admin = new admin();
                         admin.Show();
 
                     }
-                    else if (role == "student")
-                    {
-                        student student = new student();
-                        student.Show();
-
-                    }
-                    else if (role == "lecturer")
+                    else if (role == "2")
                     {
                         lecturer lecturer = new lecturer();
                         lecturer.Show();
 
                     }
+                    else if (role == "3")
+                    {
+                        student student = new student();
+                        student.Show();
+
+                    }
+                    connection.Close();
+                    reader.Close();
                     this.Hide();
                 }
                 else
