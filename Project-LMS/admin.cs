@@ -23,5 +23,35 @@ namespace Project_LMS
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Grey800, Primary.Blue900, Primary.LightBlue100, Accent.LightBlue200, TextShade.WHITE);
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

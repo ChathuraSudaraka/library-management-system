@@ -27,47 +27,54 @@ namespace Project_LMS
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-
-            string username = materialTextBox1.Text;
+            string name = materialTextBox1.Text;
             string password = materialTextBox2.Text;
 
             try
             {
-                string connectionString = "server=localhost;user id=root;database=library-management-system;password=Same2u;";
-                MySqlConnection con = new MySqlConnection(connectionString);
-                con.Open();
-                string query = "Select * from users where username = 'username' and password = 'password'";
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                MySqlDataReader dr = cmd.ExecuteReader();
-
-                if (username == "admin" && password == "admin")
-                {
-                    admin admin = new admin();
-                    admin.Show();
-                    this.Hide();
-                }
-                else if (username == "lecturer" && password == "lecturer")
-                {
-                    lecturer lecturer = new lecturer();
-                    lecturer.Show();
-                    this.Hide();
-                }
-                else if (username == "student" && password == "student")
-                {
-                    student student = new student();
-                    student.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid username or password");
-                }
+                string connectionString = "server=localhost;database=library-management-system;uid=root;password=Same2u;";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+                string query = "SELECT * FROM users where name = 'name' and password = 'password'";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
             }
-
             catch
             {
 
             }
+
+            if (name == "" && password == "")
+            {
+                admin admin = new admin();
+                admin.Show();
+                this.Close();
+            }
+            else if (name == "" && password == "")
+            {
+                student student = new student();
+                student.Show();
+                this.Close();
+            }
+            else if (name == "" && password == "")
+            {
+                lecturer lecturer = new lecturer();
+                lecturer.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Login Faild");
+            }
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            signup signup = new signup();
+            signup.Show();
+            this.Hide();
         }
     }
+
 }
