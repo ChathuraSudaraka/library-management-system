@@ -161,6 +161,18 @@
   <ItemGroup>
     <None Include="Resources\library.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20944201.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-sora-shimazaki-5668857.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20944201 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20944201__1_-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"

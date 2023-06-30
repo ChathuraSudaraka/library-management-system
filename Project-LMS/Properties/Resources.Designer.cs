@@ -63,6 +63,36 @@ namespace Project_LMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _20944201 {
+            get {
+                object obj = ResourceManager.GetObject("20944201", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _20944201__1_ {
+            get {
+                object obj = ResourceManager.GetObject("20944201 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _20944201__1__removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("20944201__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bookmark_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bookmark-48", resourceCulture);
@@ -116,6 +146,16 @@ namespace Project_LMS.Properties {
         internal static System.Drawing.Bitmap My_project {
             get {
                 object obj = ResourceManager.GetObject("My project", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_sora_shimazaki_5668857 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-sora-shimazaki-5668857", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
