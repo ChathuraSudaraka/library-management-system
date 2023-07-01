@@ -23,8 +23,8 @@ namespace Project_LMS
 
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Grey800, Primary.Blue900, Primary.LightBlue100, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue600, Primary.LightBlue100, Accent.LightBlue200, TextShade.WHITE);
 
             this.LoadBooks();
         }
@@ -47,6 +47,7 @@ namespace Project_LMS
                     ListViewItem item = new ListViewItem(reader["id"].ToString());
                     item.SubItems.Add(reader["title"].ToString());
                     item.SubItems.Add(reader["author"].ToString());
+                    item.SubItems.Add(reader["isAvailable"].ToString());
                     materialListView1.Items.Add(item);
                 }
 
