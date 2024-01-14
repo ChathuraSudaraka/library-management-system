@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,8 +23,9 @@ namespace Project_LMS
 
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue600, Primary.LightBlue100, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900,
+            Primary.Blue600, Primary.LightBlue100, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
@@ -33,24 +35,24 @@ namespace Project_LMS
 
             try
             {
-                String connectionString = "server=localhost;database=library-management-system;uid=root;password=Same2u;";
+                String connectionString = "server=localhost;database=library-management-system; uid = root; password = Same2u; ";
                 MySqlConnection connection = new MySqlConnection();
                 connection.ConnectionString = connectionString;
                 connection.Open();
 
-                String query = "SELECT * FROM users \r\nWHERE `name` = '"+ name +"'\r\nAND `password` = '"+ password +"'";
+                String query = "SELECT * FROM users \r\nWHERE `name` = '" + name + "'\r\nAND `password` = '"+ password +"'";	
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    // 1 = admin, 2 = lecuturer, 3 = student
+                    // 1 = student, 2 = lecuturer, 3 = admin
                     String role = reader["role_id"].ToString();
 
                     if (role == "1")
                     {
-                        admin admin = new admin();
-                        admin.Show();
+                        student student = new student();
+                        student.Show();
 
                     }
                     else if (role == "2")
@@ -61,8 +63,8 @@ namespace Project_LMS
                     }
                     else if (role == "3")
                     {
-                        student student = new student();
-                        student.Show();
+                        admin admin = new admin();
+                        admin.Show();
 
                     }
                     connection.Close();
@@ -71,7 +73,8 @@ namespace Project_LMS
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Username or Password");
+                    MessageBox.Show("Invalid Username or Password", "Success",
+             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }
@@ -79,9 +82,6 @@ namespace Project_LMS
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-
-
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -90,6 +90,10 @@ namespace Project_LMS
             signup.Show();
             this.Hide();
         }
-    }
 
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

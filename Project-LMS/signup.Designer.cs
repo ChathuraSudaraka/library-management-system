@@ -335,7 +335,6 @@
             this.MaximizeBox = false;
             this.Name = "signup";
             this.Text = "Signup";
-            this.Load += new System.EventHandler(this.signup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

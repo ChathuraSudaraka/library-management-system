@@ -16,7 +16,7 @@ namespace Project_LMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new signup());
+            Application.Run(new login());
         }
     }
 }

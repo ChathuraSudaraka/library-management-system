@@ -60,3 +60,34 @@ F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.csproj.Cor
 F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.csproj.CopyComplete
 F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.exe
 F:\GitHub\library-management-system\Project-LMS\obj\Debug\Project-LMS.pdb
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\Project-LMS.exe.config
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\Project-LMS.exe
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\Project-LMS.pdb
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\MaterialSkin.dll
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\MySqlConnector.dll
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Buffers.dll
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Memory.dll
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Numerics.Vectors.dll
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\MySqlConnector.xml
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Buffers.xml
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Memory.xml
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Numerics.Vectors.xml
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\GIT Projects\Esoft-lib\Project-LMS\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.csproj.AssemblyReference.cache
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.csproj.SuggestedBindingRedirects.cache
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project_LMS.admin.resources
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project_LMS.lecturer.resources
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project_LMS.login.resources
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project_LMS.Properties.Resources.resources
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project_LMS.signup.resources
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project_LMS.student.resources
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.csproj.GenerateResource.cache
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.csproj.CoreCompileInputs.cache
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.csproj.CopyComplete
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.exe
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.pdb
