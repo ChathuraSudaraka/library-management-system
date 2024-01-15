@@ -1,6 +1,5 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
-using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,13 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
+using MySqlConnector;
+using System.Reflection;
+using System.Security.Cryptography;
 
 namespace Project_LMS
 {
     public partial class lecturer : MaterialForm
     {
-        public static MySqlConnection connection;
+        private static MySqlConnection connection;
+
         public lecturer()
         {
             InitializeComponent();
@@ -24,25 +26,30 @@ namespace Project_LMS
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Grey800, Primary.Blue900, Primary.LightBlue100, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue600,
+            Primary.LightBlue100, Accent.LightBlue200, TextShade.WHITE);
 
+            this.LoadBooks();
         }
 
-        private void materialLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialButton1_Click(object sender, EventArgs e)
+        public void LoadBooks(String name = "")
         {
             try
             {
-                string connectionString = "server=localhost;database=library-management-system;uid=root;password=Same2u;";
+                materialListView1.Items.Clear();
+                string connectionString = "server=localhost;database=library-management-system; uid = root; password = Same2u; ";
+
                 connection = new MySqlConnection();
                 connection.ConnectionString = connectionString;
                 connection.Open();
 
-                String query = "SELECT books.id, isAvailable, titles.title AS title, authors.name AS author\r\nFROM books \r\nINNER JOIN authors ON books.authors_id = authors.id\r\nINNER JOIN titles ON books.titles_id = titles.id";
+                String query = "SELECT books.id, isAvailable, titles.title AS title, authors.name AS author "
+                 + "FROM books "
+                 + "INNER JOIN authors ON books.authors_id = authors.id "
+                 + "INNER JOIN titles ON books.titles_id = titles.id "
+                 + "WHERE titles.title LIKE '%" + name + "%' "
+                 + "ORDER BY title ASC";
+
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -62,6 +69,17 @@ namespace Project_LMS
             {
                 MessageBox.Show("Error" + ex.Message);
             }
+        }
+
+        private void materialButton1_Click_1(object sender, EventArgs e)
+        {
+            this.LoadBooks(materialTextBox1.Text);
+
+        }
+
+        private void materialButton2_Click_1(object sender, EventArgs e)
+        {
+            LoadBooks();
         }
     }
 }
