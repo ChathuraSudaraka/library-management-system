@@ -388,12 +388,5 @@ namespace Project_LMS
         {
 
         }
-        private void tabPage5_Click(object sender, EventArgs e)
-        {
-            signup signup = new signup();
-            this.Close();
-            signup.Show();
-
-        }
     }
 }

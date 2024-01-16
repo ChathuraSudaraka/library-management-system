@@ -77,7 +77,6 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -92,7 +91,6 @@
             this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Controls.Add(this.tabPage4);
-            this.materialTabControl1.Controls.Add(this.tabPage5);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.ImageList = this.imageList1;
@@ -113,7 +111,7 @@
             this.tabPage1.Controls.Add(this.materialButton1);
             this.tabPage1.Controls.Add(this.materialLabel2);
             this.tabPage1.Controls.Add(this.materialTextBox1);
-            this.tabPage1.ImageKey = "icons8-search-26.png";
+            this.tabPage1.ImageKey = "search.png";
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -266,7 +264,7 @@
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.tbAuthor);
             this.tabPage2.Controls.Add(this.materialButton3);
-            this.tabPage2.ImageKey = "icons8-bookmark-48.png";
+            this.tabPage2.ImageKey = "book.png";
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -362,6 +360,7 @@
             this.tabPage3.Controls.Add(this.materialButton7);
             this.tabPage3.Controls.Add(this.materialLabel1);
             this.tabPage3.Controls.Add(this.tbUserid);
+            this.tabPage3.ImageKey = "information.png";
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -485,7 +484,7 @@
             this.tbUserid.MouseState = MaterialSkin.MouseState.OUT;
             this.tbUserid.Multiline = false;
             this.tbUserid.Name = "tbUserid";
-            this.tbUserid.Size = new System.Drawing.Size(963, 50);
+            this.tbUserid.Size = new System.Drawing.Size(951, 50);
             this.tbUserid.TabIndex = 26;
             this.tbUserid.Text = "";
             // 
@@ -506,6 +505,7 @@
             this.tabPage4.Controls.Add(this.materialTextBox4);
             this.tabPage4.Controls.Add(this.materialLabel3);
             this.tabPage4.Controls.Add(this.materialTextBox3);
+            this.tabPage4.ImageKey = "update-user.png";
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(962, 505);
@@ -733,18 +733,10 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8-bookmark-48.png");
-            this.imageList1.Images.SetKeyName(1, "icons8-search-26.png");
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(962, 505);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.imageList1.Images.SetKeyName(0, "book.png");
+            this.imageList1.Images.SetKeyName(1, "information.png");
+            this.imageList1.Images.SetKeyName(2, "search.png");
+            this.imageList1.Images.SetKeyName(3, "update-user.png");
             // 
             // admin
             // 
@@ -820,6 +812,5 @@
         private MaterialSkin.Controls.MaterialComboBox Role;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialButton materialButton9;
-        private System.Windows.Forms.TabPage tabPage5;
     }
 }
