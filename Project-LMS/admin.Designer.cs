@@ -57,9 +57,9 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tbUserid = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.tbUserid = new MaterialSkin.Controls.MaterialTextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
@@ -77,6 +77,7 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -91,6 +92,7 @@
             this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Controls.Add(this.tabPage4);
+            this.materialTabControl1.Controls.Add(this.tabPage5);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.ImageList = this.imageList1;
@@ -357,15 +359,15 @@
             // 
             this.tabPage3.Controls.Add(this.materialButton6);
             this.tabPage3.Controls.Add(this.materialListView2);
-            this.tabPage3.Controls.Add(this.tbUserid);
+            this.tabPage3.Controls.Add(this.materialButton7);
             this.tabPage3.Controls.Add(this.materialLabel1);
-            this.tabPage3.Controls.Add(this.materialTextBox2);
+            this.tabPage3.Controls.Add(this.tbUserid);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(962, 505);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Search Users";
+            this.tabPage3.Text = "SEARCH USER";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // materialButton6
@@ -442,24 +444,24 @@
             this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader9.Width = 101;
             // 
-            // tbUserid
+            // materialButton7
             // 
-            this.tbUserid.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tbUserid.Depth = 0;
-            this.tbUserid.DrawShadows = true;
-            this.tbUserid.HighEmphasis = true;
-            this.tbUserid.Icon = null;
-            this.tbUserid.Location = new System.Drawing.Point(7, 105);
-            this.tbUserid.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.tbUserid.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tbUserid.Name = "tbUserid";
-            this.tbUserid.Size = new System.Drawing.Size(78, 36);
-            this.tbUserid.TabIndex = 28;
-            this.tbUserid.Text = "SEARCH";
-            this.tbUserid.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.tbUserid.UseAccentColor = false;
-            this.tbUserid.UseVisualStyleBackColor = true;
-            this.tbUserid.Click += new System.EventHandler(this.materialButton7_Click);
+            this.materialButton7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton7.Depth = 0;
+            this.materialButton7.DrawShadows = true;
+            this.materialButton7.HighEmphasis = true;
+            this.materialButton7.Icon = null;
+            this.materialButton7.Location = new System.Drawing.Point(7, 105);
+            this.materialButton7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton7.Name = "materialButton7";
+            this.materialButton7.Size = new System.Drawing.Size(78, 36);
+            this.materialButton7.TabIndex = 28;
+            this.materialButton7.Text = "SEARCH";
+            this.materialButton7.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton7.UseAccentColor = false;
+            this.materialButton7.UseVisualStyleBackColor = true;
+            this.materialButton7.Click += new System.EventHandler(this.materialButton7_Click);
             // 
             // materialLabel1
             // 
@@ -473,19 +475,19 @@
             this.materialLabel1.TabIndex = 27;
             this.materialLabel1.Text = "Name";
             // 
-            // materialTextBox2
+            // tbUserid
             // 
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 12F);
-            this.materialTextBox2.Location = new System.Drawing.Point(8, 32);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(963, 50);
-            this.materialTextBox2.TabIndex = 26;
-            this.materialTextBox2.Text = "";
+            this.tbUserid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbUserid.Depth = 0;
+            this.tbUserid.Font = new System.Drawing.Font("Roboto", 12F);
+            this.tbUserid.Location = new System.Drawing.Point(8, 32);
+            this.tbUserid.MaxLength = 50;
+            this.tbUserid.MouseState = MaterialSkin.MouseState.OUT;
+            this.tbUserid.Multiline = false;
+            this.tbUserid.Name = "tbUserid";
+            this.tbUserid.Size = new System.Drawing.Size(963, 50);
+            this.tbUserid.TabIndex = 26;
+            this.tbUserid.Text = "";
             // 
             // tabPage4
             // 
@@ -508,7 +510,7 @@
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(962, 505);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Update Users";
+            this.tabPage4.Text = "UPDATE USER";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // materialButton9
@@ -538,9 +540,9 @@
             this.materialLabel9.Location = new System.Drawing.Point(443, 294);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(28, 19);
+            this.materialLabel9.Size = new System.Drawing.Size(32, 19);
             this.materialLabel9.TabIndex = 13;
-            this.materialLabel9.Text = "City";
+            this.materialLabel9.Text = "Role";
             // 
             // Role
             // 
@@ -571,9 +573,9 @@
             this.materialLabel8.Location = new System.Drawing.Point(5, 295);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(32, 19);
+            this.materialLabel8.Size = new System.Drawing.Size(28, 19);
             this.materialLabel8.TabIndex = 11;
-            this.materialLabel8.Text = "Role";
+            this.materialLabel8.Text = "City";
             // 
             // City
             // 
@@ -734,6 +736,16 @@
             this.imageList1.Images.SetKeyName(0, "icons8-bookmark-48.png");
             this.imageList1.Images.SetKeyName(1, "icons8-search-26.png");
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(962, 505);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -790,9 +802,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
-        private MaterialSkin.Controls.MaterialButton tbUserid;
+        private MaterialSkin.Controls.MaterialButton materialButton7;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox tbUserid;
         private MaterialSkin.Controls.MaterialComboBox City;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox7;
@@ -808,5 +820,6 @@
         private MaterialSkin.Controls.MaterialComboBox Role;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialButton materialButton9;
+        private System.Windows.Forms.TabPage tabPage5;
     }
 }

@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Project_LMS
 {
@@ -39,7 +40,7 @@ namespace Project_LMS
 
             while (reader.Read())
             {
-                City.Items.Add(reader["type"].ToString());
+                Role.Items.Add(reader["type"].ToString());
             }
             reader.Close();
 
@@ -49,7 +50,7 @@ namespace Project_LMS
 
             while (reader.Read())
             {
-                Role.Items.Add(reader["name"].ToString());
+                City.Items.Add(reader["name"].ToString());
             }
             reader.Close();
 
@@ -218,11 +219,12 @@ namespace Project_LMS
 
         private void materialButton9_Click(object sender, EventArgs e)
         {
-            string userId = materialTextBox3.Text; // Assuming this is the user ID
+            string userId = materialTextBox3.Text;
             string name = materialTextBox4.Text;
             string mobile = materialTextBox5.Text;
             string email = materialTextBox6.Text;
             string address = materialTextBox7.Text;
+            // ...
             string city = City.SelectedItem?.ToString();
             string role = Role.SelectedItem?.ToString();
 
@@ -232,45 +234,69 @@ namespace Project_LMS
                 {
                     connection.Open();
 
-                    string roleIdQuery = "SELECT id FROM roles WHERE type = @role";
-                    MySqlCommand roleIdCmd = new MySqlCommand(roleIdQuery, connection);
-                    roleIdCmd.Parameters.AddWithValue("@role", role);
-                    object roleIdObj = roleIdCmd.ExecuteScalar();
-                    object roleId = (roleIdObj != null) ? roleIdObj : DBNull.Value;
-
-                    string cityIdQuery = "SELECT id FROM cities WHERE name = @city";
-                    MySqlCommand cityIdCmd = new MySqlCommand(cityIdQuery, connection);
-                    cityIdCmd.Parameters.AddWithValue("@city", city);
-                    object cityIdObj = cityIdCmd.ExecuteScalar();
-                    object cityId = (cityIdObj != null) ? cityIdObj : DBNull.Value;
-
-                    // Update the user's information
-                    string query = "UPDATE users SET name = @name, email = @email, "
-                                 + "mobile = @mobile, address = @address, "
-                                 + "role_id = @role, city_id = @city "
-                                 + "WHERE id = @userId";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    if (role != null)
                     {
-                        cmd.Parameters.AddWithValue("@name", name);
-                        cmd.Parameters.AddWithValue("@email", email);
-                        cmd.Parameters.AddWithValue("@mobile", mobile);
-                        cmd.Parameters.AddWithValue("@address", address);
-                        cmd.Parameters.AddWithValue("@role", roleId);
-                        cmd.Parameters.AddWithValue("@city", cityId);
-                        cmd.Parameters.AddWithValue("@userId", userId);
+                        // Retrieve role_id
+                        string roleIdQuery = "SELECT id FROM roles WHERE type = @role";
+                        MySqlCommand roleIdCmd = new MySqlCommand(roleIdQuery, connection);
+                        roleIdCmd.Parameters.AddWithValue("@role", role);
+                        string roleId = roleIdCmd.ExecuteScalar()?.ToString();
 
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                        if (roleId != null)
                         {
-                            MessageBox.Show("User information updated successfully!", "Success",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // Retrieve city_id
+                            string cityIdQuery = "SELECT id FROM cities WHERE name = @city";
+                            MySqlCommand cityIdCmd = new MySqlCommand(cityIdQuery, connection);
+                            cityIdCmd.Parameters.AddWithValue("@city", city);
+                            string cityId = cityIdCmd.ExecuteScalar()?.ToString();
+
+                            if (cityId != null)
+                            {
+                                // Update the user's information
+                                string query = "UPDATE users SET name = @name, email = @email, "
+                                               + "mobile = @mobile, address = @address, "
+                                               + "role_id = @role, city_id = @city "
+                                               + "WHERE id = @userId";
+
+                                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                                {
+                                    cmd.Parameters.AddWithValue("@name", name);
+                                    cmd.Parameters.AddWithValue("@email", email);
+                                    cmd.Parameters.AddWithValue("@mobile", mobile);
+                                    cmd.Parameters.AddWithValue("@address", address);
+                                    cmd.Parameters.AddWithValue("@role", roleId);
+                                    cmd.Parameters.AddWithValue("@city", cityId);
+                                    cmd.Parameters.AddWithValue("@userId", userId);
+
+                                    int rowsAffected = cmd.ExecuteNonQuery();
+                                    if (rowsAffected > 0)
+                                    {
+                                        MessageBox.Show("User information updated successfully!", "Success",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("User information update failed!", "Error",
+                                        MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Selected city not found. Please select a valid city.", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("User information update failed!", "Error",
-                            MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            MessageBox.Show("Selected role not found. Please select a valid role.", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a valid role.", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     connection.Close();
@@ -283,14 +309,10 @@ namespace Project_LMS
         }
 
 
-        private void materialTextBox6_TextChanged(object sender, EventArgs e)
+            private void materialTextBox6_TextChanged(object sender, EventArgs e)
         {
             string id = materialTextBox3.Text;
-            string query = "SELECT users.*, roles.`type` AS role, cities.name AS city " +
-                   "FROM users " +
-                   "INNER JOIN roles ON users.role_id = roles.id " +
-                   "INNER JOIN cities ON users.city_id = cities.id " +
-                   "WHERE users.id = @id";
+            string query = "SELECT users.*, roles.`type` AS role, cities.name AS city FROM users INNER JOIN roles ON users.role_id = roles.id INNER JOIN cities ON users.city_id = cities.id WHERE users.id = @id";
 
             try
             {
@@ -307,6 +329,12 @@ namespace Project_LMS
                     materialTextBox7.Text = reader["address"].ToString();
                     City.SelectedItem = reader["city"].ToString();
                     Role.SelectedItem = reader["role"].ToString();
+
+                    // Check for DBNull and null before setting ComboBox items
+                    City.SelectedItem = reader["city"] != DBNull.Value ? reader["city"].ToString() : null;
+
+                    // Check for null before setting ComboBox items
+                    Role.SelectedItem = reader["role"] != DBNull.Value ? reader["role"].ToString() : null;
                 }
                 reader.Close();
             }
@@ -319,7 +347,6 @@ namespace Project_LMS
                 connection.Close();
             }
         }
-
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
@@ -359,6 +386,13 @@ namespace Project_LMS
 
         private void materialButton7_Click_1(object sender, EventArgs e)
         {
+
+        }
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+            signup signup = new signup();
+            this.Close();
+            signup.Show();
 
         }
     }
