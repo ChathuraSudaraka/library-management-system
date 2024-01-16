@@ -77,6 +77,7 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -112,11 +113,11 @@
             this.tabPage1.Controls.Add(this.materialLabel2);
             this.tabPage1.Controls.Add(this.materialTextBox1);
             this.tabPage1.ImageKey = "search.png";
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPage1.Size = new System.Drawing.Size(962, 505);
+            this.tabPage1.Size = new System.Drawing.Size(962, 491);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SEARCH BOOKS";
             // 
@@ -265,14 +266,13 @@
             this.tabPage2.Controls.Add(this.tbAuthor);
             this.tabPage2.Controls.Add(this.materialButton3);
             this.tabPage2.ImageKey = "book.png";
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(962, 505);
+            this.tabPage2.Size = new System.Drawing.Size(962, 491);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ADD BOOKS";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // pictureBox1
             // 
@@ -292,7 +292,6 @@
             this.label2.Size = new System.Drawing.Size(36, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = " Title";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tbTitle
             // 
@@ -307,7 +306,6 @@
             this.tbTitle.Size = new System.Drawing.Size(473, 50);
             this.tbTitle.TabIndex = 3;
             this.tbTitle.Text = "";
-            this.tbTitle.TextChanged += new System.EventHandler(this.materialTextBox3_TextChanged);
             // 
             // label1
             // 
@@ -317,7 +315,6 @@
             this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = " Author";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbAuthor
             // 
@@ -332,7 +329,6 @@
             this.tbAuthor.Size = new System.Drawing.Size(476, 50);
             this.tbAuthor.TabIndex = 1;
             this.tbAuthor.Text = "";
-            this.tbAuthor.TextChanged += new System.EventHandler(this.materialTextBox2_TextChanged);
             // 
             // materialButton3
             // 
@@ -355,16 +351,17 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.materialButton5);
             this.tabPage3.Controls.Add(this.materialButton6);
             this.tabPage3.Controls.Add(this.materialListView2);
             this.tabPage3.Controls.Add(this.materialButton7);
             this.tabPage3.Controls.Add(this.materialLabel1);
             this.tabPage3.Controls.Add(this.tbUserid);
             this.tabPage3.ImageKey = "information.png";
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 39);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(962, 505);
+            this.tabPage3.Size = new System.Drawing.Size(962, 491);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "SEARCH USER";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -376,7 +373,7 @@
             this.materialButton6.DrawShadows = true;
             this.materialButton6.HighEmphasis = true;
             this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(761, 105);
+            this.materialButton6.Location = new System.Drawing.Point(589, 105);
             this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton6.Name = "materialButton6";
@@ -506,9 +503,9 @@
             this.tabPage4.Controls.Add(this.materialLabel3);
             this.tabPage4.Controls.Add(this.materialTextBox3);
             this.tabPage4.ImageKey = "update-user.png";
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Location = new System.Drawing.Point(4, 39);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(962, 505);
+            this.tabPage4.Size = new System.Drawing.Size(962, 491);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "UPDATE USER";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -738,6 +735,25 @@
             this.imageList1.Images.SetKeyName(2, "search.png");
             this.imageList1.Images.SetKeyName(3, "update-user.png");
             // 
+            // materialButton5
+            // 
+            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton5.Depth = 0;
+            this.materialButton5.DrawShadows = true;
+            this.materialButton5.HighEmphasis = true;
+            this.materialButton5.Icon = null;
+            this.materialButton5.Location = new System.Drawing.Point(715, 105);
+            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton5.Name = "materialButton5";
+            this.materialButton5.Size = new System.Drawing.Size(120, 36);
+            this.materialButton5.TabIndex = 31;
+            this.materialButton5.Text = "Remove user";
+            this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton5.UseAccentColor = false;
+            this.materialButton5.UseVisualStyleBackColor = true;
+            this.materialButton5.Click += new System.EventHandler(this.materialButton5_Click_1);
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -748,7 +764,7 @@
             this.DrawerTabControl = this.materialTabControl1;
             this.MaximizeBox = false;
             this.Name = "admin";
-            this.Text = "Eversoft Library";
+            this.Text = "Admin Dashboard";
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -812,5 +828,6 @@
         private MaterialSkin.Controls.MaterialComboBox Role;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
         private MaterialSkin.Controls.MaterialButton materialButton9;
+        private MaterialSkin.Controls.MaterialButton materialButton5;
     }
 }

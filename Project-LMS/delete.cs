@@ -66,9 +66,5 @@ namespace Project_LMS
             }
         }
 
-        private void materialTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

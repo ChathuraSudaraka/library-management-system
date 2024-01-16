@@ -164,7 +164,7 @@
             this.Controls.Add(this.materialTextBox1);
             this.MaximizeBox = false;
             this.Name = "student";
-            this.Text = "Eversoft Library";
+            this.Text = "Student Dashboard";
             this.ResumeLayout(false);
             this.PerformLayout();
 

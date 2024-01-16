@@ -159,61 +159,88 @@ namespace Project_LMS
         /*======================= Add Books Start =======================*/
         private void materialButton8_Click(object sender, EventArgs e)
         {
-            string author = tbAuthor.Text;
-            string title = tbTitle.Text;
+            // Validate author and title inputs
+            string author = tbAuthor.Text.Trim();
+            string title = tbTitle.Text.Trim();
 
-            string query1 = "SELECT id FROM authors WHERE name = '" + author + "'";
-            string query2 = "SELECT id FROM titles WHERE title = '" + title + "'";
-            string query3 = "INSERT INTO books (authors_id, titles_id, isAvailable) VALUES (@authors_id, @titles_id, 1)";
-
-            connection.Open();
-
-            MySqlCommand cmd1 = new MySqlCommand(query1, connection);
-            MySqlDataReader reader1 = cmd1.ExecuteReader();
-            int author_id = 0;
-            if (reader1.Read())
+            if (string.IsNullOrWhiteSpace(author) || string.IsNullOrWhiteSpace(title))
             {
-                author_id = reader1.GetInt32("id");
-                reader1.Close();
-            }
-            else
-            {
-                reader1.Close();
-                string query = "INSERT INTO authors (name) VALUES (@author)";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@author", author);
-                cmd.ExecuteNonQuery();
-                author_id = (int)cmd.LastInsertedId;
+                MessageBox.Show("Please enter both author and title.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            MySqlCommand cmd2 = new MySqlCommand(query2, connection);
-            MySqlDataReader reader2 = cmd2.ExecuteReader();
-            int title_id = 0;
-            if (reader2.Read())
+            try
             {
-                title_id = reader2.GetInt32("id");
-                reader2.Close();
+                connection.Open();
+
+                // Validate if the author already exists
+                int author_id;
+                using (MySqlCommand cmd1 = new MySqlCommand("SELECT id FROM authors WHERE name = @author", connection))
+                {
+                    cmd1.Parameters.AddWithValue("@author", author);
+                    object authorIdResult = cmd1.ExecuteScalar();
+
+                    if (authorIdResult != null && int.TryParse(authorIdResult.ToString(), out author_id))
+                    {
+                        // Author exists, retrieve the id
+                    }
+                    else
+                    {
+                        // Author does not exist, insert into authors table
+                        using (MySqlCommand cmdInsertAuthor = new MySqlCommand("INSERT INTO authors (name) VALUES (@author); SELECT LAST_INSERT_ID();", connection))
+                        {
+                            cmdInsertAuthor.Parameters.AddWithValue("@author", author);
+                            author_id = Convert.ToInt32(cmdInsertAuthor.ExecuteScalar());
+                        }
+                    }
+                }
+
+                // Validate if the title already exists
+                int title_id;
+                using (MySqlCommand cmd2 = new MySqlCommand("SELECT id FROM titles WHERE title = @title", connection))
+                {
+                    cmd2.Parameters.AddWithValue("@title", title);
+                    object titleIdResult = cmd2.ExecuteScalar();
+
+                    if (titleIdResult != null && int.TryParse(titleIdResult.ToString(), out title_id))
+                    {
+                        // Title exists, retrieve the id
+                    }
+                    else
+                    {
+                        // Title does not exist, insert into titles table
+                        using (MySqlCommand cmdInsertTitle = new MySqlCommand("INSERT INTO titles (title) VALUES (@title); SELECT LAST_INSERT_ID();", connection))
+                        {
+                            cmdInsertTitle.Parameters.AddWithValue("@title", title);
+                            title_id = Convert.ToInt32(cmdInsertTitle.ExecuteScalar());
+                        }
+                    }
+                }
+
+                // Insert into books table
+                using (MySqlCommand cmd3 = new MySqlCommand("INSERT INTO books (authors_id, titles_id, isAvailable) VALUES (@authors_id, @titles_id, 1); SELECT LAST_INSERT_ID();", connection))
+                {
+                    cmd3.Parameters.AddWithValue("@authors_id", author_id);
+                    cmd3.Parameters.AddWithValue("@titles_id", title_id);
+                    int book_id = Convert.ToInt32(cmd3.ExecuteScalar());
+
+                    MessageBox.Show("Book added successfully with id: " + book_id, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (MySqlException ex)
             {
-                reader2.Close();
-                string query = "INSERT INTO titles (title) VALUES ('" + title + "')";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                title_id = (int)cmd.LastInsertedId;
+                MessageBox.Show("MySQL Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            reader2.Close();
-
-            MySqlCommand cmd3 = new MySqlCommand(query3, connection);
-            cmd3.Parameters.AddWithValue("@authors_id", author_id);
-            cmd3.Parameters.AddWithValue("@titles_id", title_id);
-            cmd3.ExecuteNonQuery();
-            int book_id = (int)cmd3.LastInsertedId;
-
-            MessageBox.Show("Book added successfully with id: " + book_id);
-
-            connection.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
+
 
         /*======================= Add Books End =======================*/
 
@@ -354,39 +381,10 @@ namespace Project_LMS
             delete.Show();
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
+        private void materialButton5_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialButton7_Click_1(object sender, EventArgs e)
-        {
-
+            userremove userremove = new userremove();
+            userremove.Show();
         }
     }
 }

@@ -87,7 +87,7 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialTextBox1);
             this.Name = "delete";
-            this.Text = "delete";
+            this.Text = "Remove Book";
             this.ResumeLayout(false);
             this.PerformLayout();
 
