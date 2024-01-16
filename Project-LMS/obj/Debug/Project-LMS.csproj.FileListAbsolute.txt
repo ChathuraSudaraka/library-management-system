@@ -91,3 +91,4 @@ D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.csproj.CoreCompileIn
 D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.csproj.CopyComplete
 D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.exe
 D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project-LMS.pdb
+D:\GIT Projects\Esoft-lib\Project-LMS\obj\Debug\Project_LMS.delete.resources
