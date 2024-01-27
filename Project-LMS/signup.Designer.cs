@@ -47,6 +47,9 @@
             this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.materialComboBox3 = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.materialTextBox6 = new MaterialSkin.Controls.MaterialTextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // materialButton1
@@ -308,11 +311,60 @@
             this.materialComboBox3.Size = new System.Drawing.Size(426, 49);
             this.materialComboBox3.TabIndex = 39;
             // 
+            // materialButton2
+            // 
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.DrawShadows = true;
+            this.materialButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(247, 447);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.Size = new System.Drawing.Size(64, 36);
+            this.materialButton2.TabIndex = 40;
+            this.materialButton2.Text = "LogIn";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click_1);
+            // 
+            // materialTextBox6
+            // 
+            this.materialTextBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox6.Depth = 0;
+            this.materialTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.materialTextBox6.Location = new System.Drawing.Point(450, 436);
+            this.materialTextBox6.MaxLength = 50;
+            this.materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox6.Multiline = false;
+            this.materialTextBox6.Name = "materialTextBox6";
+            this.materialTextBox6.Size = new System.Drawing.Size(429, 50);
+            this.materialTextBox6.TabIndex = 42;
+            this.materialTextBox6.Text = "";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(447, 414);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 16);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "NIC";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
             // signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(885, 498);
+            this.Controls.Add(this.materialTextBox6);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.materialButton2);
             this.Controls.Add(this.materialComboBox3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -360,5 +412,8 @@
         private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
         private System.Windows.Forms.Label label10;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox3;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox6;
+        private System.Windows.Forms.Label label11;
     }
 }

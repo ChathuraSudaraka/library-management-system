@@ -77,6 +77,7 @@ namespace Project_LMS
             string role = materialComboBox1.SelectedItem?.ToString();
             string gender = materialComboBox3.SelectedItem?.ToString();
             string city = materialComboBox2.SelectedItem?.ToString();
+            string nic = materialTextBox6.Text;
 
             try
             {
@@ -105,7 +106,7 @@ namespace Project_LMS
                     gender = reader3["id"].ToString();
                     reader3.Close();
 
-                    string query = "INSERT INTO users (`name`, `email`, `password`, `mobile`, `address`, `role_id`, `gender_id`, `city_id`) " + "VALUES(@name, @email,@password, @mobile, @address, @role, @gender, @city)"; 
+                    string query = "INSERT INTO users (`name`, `email`, `password`, `mobile`, `address`, `role_id`, `gender_id`, `city_id`, `nic`) " + "VALUES(@name, @email,@password, @mobile, @address, @role, @gender, @city, @nic)"; 
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
@@ -117,6 +118,7 @@ namespace Project_LMS
                         cmd.Parameters.AddWithValue("@role", role);
                         cmd.Parameters.AddWithValue("@gender", gender);
                         cmd.Parameters.AddWithValue("@city", city);
+                        cmd.Parameters.AddWithValue("@nic", nic);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -147,6 +149,7 @@ namespace Project_LMS
             materialTextBox3.Clear();
             materialTextBox4.Clear();
             materialTextBox5.Clear();
+            materialTextBox6.Clear();
             materialComboBox1.SelectedIndex = -1;
             materialComboBox3.SelectedIndex = -1;
             materialComboBox2.SelectedIndex = -1;
@@ -157,6 +160,18 @@ namespace Project_LMS
             login login = new login();
             login.Show();
             this.Hide();
+        }
+
+        private void materialButton2_Click_1(object sender, EventArgs e)
+        {
+            login login = new login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
